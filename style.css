@@ -1,3 +1,10 @@
+:root {
+	--departure-color: #f0e68c;
+	--arrival-color: ;
+	--separator-color: #e0e0e0;
+	--border-color: #a9a9a9;
+}
+
 .strip {
 	display: grid;
 	grid-template-columns: 150px repeat(2, 80px) 320px repeat(3, 120px) 30px 60px;
@@ -8,8 +15,8 @@
 }
 
 .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9, .div10, .div16, .div17, .div18, .div19, .div20, .div21, .div22, .div23, .div24, .div25, .div26, .div27, .div28, .div29, .div30 {
-	background-color: #f0e68c;
-	border: 1px solid #a9a9a9;
+	background-color: var(--departure-color);
+	border: 1px solid var(--border-color);
 }
 
 .div1	{ grid-area: 1 / 1 / 2 / 2; padding-left: 10px;}
@@ -39,27 +46,27 @@
 .div30	{ grid-area: 3 / 9 / 4 / 10; display: flex;}
 
 .deletebutton {
-	background-color: #f0e68c;
+	background-color: var(--departure-color);
 	width: 60px;
-	border: 1px solid #a9a9a9;
+	border: 1px solid var(--border-color);
 }
 
 .updownbutton {
-	background-color: #f0e68c;
+	background-color: var(--departure-color);
 	width: 30px;
-	border: 1px solid #a9a9a9;
+	border: 1px solid var(--border-color);
 }
 
 .sepdeletebutton {
-	background-color: #e0e0e0;
+	background-color: var(--separator-color);
 	width: 60px;
-	border: 1px solid #a9a9a9;
+	border: 1px solid var(--border-color);
 }
 
 .sepupdownbutton {
-	background-color: #e0e0e0;
+	background-color: var(--separator-color);
 	width: 30px;
-	border: 1px solid #a9a9a9;
+	border: 1px solid var(--border-color);
 }
 
 .sep {
@@ -72,7 +79,7 @@
 }
 
 .sep1, .sep2, .sep3, .sep4 {
-	background-color: #e0e0e0;
+	background-color: var(--separator-color);
 }
 
 .sep1 {
