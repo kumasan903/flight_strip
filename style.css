@@ -45,25 +45,13 @@
 .div29	{ grid-area: 2 / 9 / 3 / 10; display: flex;}
 .div30	{ grid-area: 3 / 9 / 4 / 10; display: flex;}
 
-.deletebutton {
-	background-color: var(--departure-color);
-	width: 60px;
-	border: 1px solid var(--border-color);
-}
-
-.updownbutton {
+.button {
 	background-color: var(--departure-color);
 	width: 30px;
 	border: 1px solid var(--border-color);
 }
 
-.sepdeletebutton {
-	background-color: var(--separator-color);
-	width: 60px;
-	border: 1px solid var(--border-color);
-}
-
-.sepupdownbutton {
+.sepbutton {
 	background-color: var(--separator-color);
 	width: 30px;
 	border: 1px solid var(--border-color);

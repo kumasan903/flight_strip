@@ -76,9 +76,9 @@ function create_new_strip() {
 	div26.appendChild(checkbox2);
 	div27.appendChild(checkbox3);
 
-	div28.innerHTML = "<input class=\"deletebutton\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
-	div29.innerHTML = "<input class=\"updownbutton\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input class=\"updownbutton\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
-	div30.innerHTML = "<input class=\"updownbutton\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input class=\"updownbutton\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
+	div28.innerHTML = "<input class=\"button\" type=\"button\" value=\"&#x1f3a8\" onclick=\"change_color(this)\"><input class=\"button\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
+	div29.innerHTML = "<input class=\"button\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input class=\"button\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
+	div30.innerHTML = "<input class=\"button\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input class=\"button\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
 
 	strip.appendChild(div1);
 	strip.appendChild(div2);
@@ -163,9 +163,13 @@ function create_new_sep(){
 	separator.appendChild(sep3);
 	separator.appendChild(sep4);
 
-	sep2.innerHTML = "<input class=\"sepdeletebutton\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
-	sep3.innerHTML = "<input class=\"sepupdownbutton\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input class=\"sepupdownbutton\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
-	sep4.innerHTML = "<input class=\"sepupdownbutton\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input class=\"sepupdownbutton\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
+	sep2.innerHTML = "<input class=\"sepbutton\" type=\"button\" value=\"&#x1f3a8\" onclick=\"change_color(this)\"><input class=\"sepbutton\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
+	sep3.innerHTML = "<input class=\"sepbutton\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input class=\"sepbutton\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
+	sep4.innerHTML = "<input class=\"sepbutton\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input class=\"sepbutton\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
 
 	document.body.appendChild(separator);
+}
+
+function change_color(obj) {
+	alert("color change is Work In Progress.");
 }
