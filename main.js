@@ -58,17 +58,14 @@ function create_new_strip() {
 	div9.placeholder	= "代替";
 	div10.placeholder	= "フライトプラン";
 
-	const deletebutton	= document.createElement("input");
 	const checkbox1		= document.createElement("input");
 	const checkbox2		= document.createElement("input");
 
-	deletebutton.type		= "button";
-	deletebutton.value		= "☓";
-	deletebutton.className	= "deletebutton";
 	checkbox1.type			= "checkbox";
 	checkbox2.type			= "checkbox";
 
-	div25.appendChild(deletebutton);
+	div25.innerHTML = "<input type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
+
 	div26.appendChild(checkbox1);
 	div27.appendChild(checkbox2);
 
@@ -96,4 +93,9 @@ function create_new_strip() {
 	strip.appendChild(div27);
 
 	document.body.appendChild(strip);
+}
+
+function delete_strip(obj) {
+	parent_strip = obj.parentNode.parentNode;
+	parent_strip.remove();
 }
