@@ -1,13 +1,13 @@
 .strip {
 	display: grid;
-	grid-template-columns: 150px repeat(2, 80px) 320px repeat(3, 120px) 30px;
+	grid-template-columns: 150px repeat(2, 80px) 320px repeat(3, 120px) 30px 60px;
 	grid-template-rows: repeat(3, 40px);
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	padding: 5px;
 }
 
-.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9, .div10, .div16, .div17, .div18, .div19, .div20, .div21, .div22, .div23, .div24, .div25, .div26, .div27 {
+.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9, .div10, .div16, .div17, .div18, .div19, .div20, .div21, .div22, .div23, .div24, .div25, .div26, .div27, .div28, .div29, .div30 {
 	background-color: #f0e68c;
 	border: 1px solid #a9a9a9;
 }
@@ -34,3 +34,18 @@
 .div25	{ grid-area: 1 / 8 / 2 / 9; display: flex;}
 .div26	{ grid-area: 2 / 8 / 3 / 9; display: flex;}
 .div27	{ grid-area: 3 / 8 / 4 / 9; display: flex;}
+.div28	{ grid-area: 1 / 9 / 2 / 10; display: flex;}
+.div29	{ grid-area: 2 / 9 / 3 / 10; display: flex;}
+.div30	{ grid-area: 3 / 9 / 4 / 10; display: flex;}
+
+.deletebutton {
+	background-color: #f0e68c;
+	width: 60px;
+	border: 1px solid #a9a9a9;
+}
+
+.updownbutton {
+	background-color: #f0e68c;
+	width: 30px;
+	border: 1px solid #a9a9a9;
+}

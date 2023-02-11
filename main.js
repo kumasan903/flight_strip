@@ -22,6 +22,9 @@ function create_new_strip() {
 	const div25	= document.createElement("div");
 	const div26	= document.createElement("div");
 	const div27	= document.createElement("div");
+	const div28	= document.createElement("div");
+	const div29	= document.createElement("div");
+	const div30	= document.createElement("div");
 
 	strip.className	= "strip";
 	div1.className	= "div1";
@@ -46,6 +49,9 @@ function create_new_strip() {
 	div25.className	= "div25";
 	div26.className	= "div26";
 	div27.className	= "div27";
+	div28.className	= "div28";
+	div29.className	= "div29";
+	div30.className	= "div30";
 
 	div1.placeholder	= "コールサイン";
 	div2.placeholder	= "機種/後方乱気流区分";
@@ -60,14 +66,19 @@ function create_new_strip() {
 
 	const checkbox1		= document.createElement("input");
 	const checkbox2		= document.createElement("input");
+	const checkbox3		= document.createElement("input");
 
-	checkbox1.type			= "checkbox";
-	checkbox2.type			= "checkbox";
+	checkbox1.type	= "checkbox";
+	checkbox2.type	= "checkbox";
+	checkbox3.type	= "checkbox";
 
-	div25.innerHTML = "<input type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
+	div25.appendChild(checkbox1);
+	div26.appendChild(checkbox2);
+	div27.appendChild(checkbox3);
 
-	div26.appendChild(checkbox1);
-	div27.appendChild(checkbox2);
+	div28.innerHTML = "<input class=\"deletebutton\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
+	div29.innerHTML = "<input class=\"updownbutton\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input class=\"updownbutton\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
+	div30.innerHTML = "<input class=\"updownbutton\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input class=\"updownbutton\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
 
 	strip.appendChild(div1);
 	strip.appendChild(div2);
@@ -91,11 +102,41 @@ function create_new_strip() {
 	strip.appendChild(div25);
 	strip.appendChild(div26);
 	strip.appendChild(div27);
+	strip.appendChild(div28);
+	strip.appendChild(div29);
+	strip.appendChild(div30);
 
 	document.body.appendChild(strip);
 }
 
 function delete_strip(obj) {
-	parent_strip = obj.parentNode.parentNode;
+	const parent_strip = obj.parentNode.parentNode;
 	parent_strip.remove();
+}
+
+function moveup(obj){
+	const parent_strip = obj.parentNode.parentNode;
+	const prev_strip = parent_strip.previousSibling;
+	document.body.insertBefore(parent_strip, prev_strip);
+}
+
+function movedown(obj){
+	const parent_strip = obj.parentNode.parentNode;
+	const next_strip = parent_strip.nextSibling;
+	if (next_strip === null){
+		return;
+	}
+	document.body.insertBefore(parent_strip, next_strip.nextSibling);
+}
+
+function movetop(obj){
+	const parent_strip = obj.parentNode.parentNode;
+	const top_node = parent_strip.parentNode.firstChild;
+	const top_strip = top_node.nextSibling.nextSibling;
+	document.body.insertBefore(parent_strip, top_strip);
+}
+
+function movebottom(obj){
+	const parent_strip = obj.parentNode.parentNode;
+	document.body.insertBefore(parent_strip, null);
 }
