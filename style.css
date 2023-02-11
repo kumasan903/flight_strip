@@ -49,3 +49,39 @@
 	width: 30px;
 	border: 1px solid #a9a9a9;
 }
+
+.sepdeletebutton {
+	background-color: #e0e0e0;
+	width: 60px;
+	border: 1px solid #a9a9a9;
+}
+
+.sepupdownbutton {
+	background-color: #e0e0e0;
+	width: 30px;
+	border: 1px solid #a9a9a9;
+}
+
+.sep {
+	display: grid;
+	grid-template-columns: 1020px 60px;
+	grid-template-rows: repeat(3, 40px);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	padding: 5px;
+}
+
+.sep1, .sep2, .sep3, .sep4 {
+	background-color: #e0e0e0;
+}
+
+.sep1 {
+	border: none;
+	text-align: center;
+	font-size: 3rem;
+}
+
+.sep1 { grid-area: 1 / 1 / 4 / 2; }
+.sep2 { grid-area: 1 / 2 / 2 / 3; display: flex;}
+.sep3 { grid-area: 2 / 2 / 3 / 3; display: flex;}
+.sep4 { grid-area: 3 / 2 / 4 / 3; display: flex;}

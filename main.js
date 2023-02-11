@@ -116,6 +116,9 @@ function delete_strip(obj) {
 
 function moveup(obj){
 	const parent_strip = obj.parentNode.parentNode;
+	if (parent_strip.previousSibling.className !== "strip"){
+		return;
+	}
 	const prev_strip = parent_strip.previousSibling;
 	document.body.insertBefore(parent_strip, prev_strip);
 }
@@ -139,4 +142,30 @@ function movetop(obj){
 function movebottom(obj){
 	const parent_strip = obj.parentNode.parentNode;
 	document.body.insertBefore(parent_strip, null);
+}
+
+function create_new_sep(){
+	const sep1 = document.createElement("input");
+	const sep2 = document.createElement("div");
+	const sep3 = document.createElement("div");
+	const sep4 = document.createElement("div");
+
+	sep1.className = "sep1";
+	sep2.className = "sep2";
+	sep3.className = "sep3";
+	sep4.className = "sep4";
+
+	const separator = document.createElement("div");
+	separator.className = "sep";
+
+	separator.appendChild(sep1);
+	separator.appendChild(sep2);
+	separator.appendChild(sep3);
+	separator.appendChild(sep4);
+
+	sep2.innerHTML = "<input class=\"sepdeletebutton\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
+	sep3.innerHTML = "<input class=\"sepupdownbutton\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input class=\"sepupdownbutton\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
+	sep4.innerHTML = "<input class=\"sepupdownbutton\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input class=\"sepupdownbutton\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
+
+	document.body.appendChild(separator);
 }
