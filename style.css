@@ -1,22 +1,45 @@
 :root {
-	--departure-color: #f0e68c;
-	--arrival-color: ;
-	--separator-color: #e0e0e0;
-	--border-color: #a9a9a9;
+	--departure-color: #e0ffc1;
+	--arrival-color: #ffffc1;
+	--other-color: #c1ffe0;
+	--separator-color: whitesmoke;
+	--red-separator-color: #ffa8a8;
+	--border-color: #c0c0c0;
 }
 
-.strip {
+.arr_strip, .dep_strip, .other_strip {
 	display: grid;
 	grid-template-columns: 150px repeat(2, 80px) 320px repeat(3, 120px) 30px 60px;
 	grid-template-rows: repeat(3, 40px);
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-	padding: 5px;
+	margin: 5px;
+	width: 1080px;
+}
+
+.arr_strip {
+	background-color: var(--arrival-color);
+}
+
+.dep_strip {
+	background-color: var(--departure-color);
+}
+
+.other_strip {
+	background-color: var(--other-color);
+}
+
+.sep {
+	background-color: var(--separator-color);
+}
+
+.red_sep {
+	background-color: var(--red-separator-color);
 }
 
 .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9, .div10, .div16, .div17, .div18, .div19, .div20, .div21, .div22, .div23, .div24, .div25, .div26, .div27, .div28, .div29, .div30 {
-	background-color: var(--departure-color);
 	border: 1px solid var(--border-color);
+	background-color: rgba(0, 0, 0, 0);
 }
 
 .div1	{ grid-area: 1 / 1 / 2 / 2; padding-left: 10px;}
@@ -46,9 +69,9 @@
 .div30	{ grid-area: 3 / 9 / 4 / 10; display: flex;}
 
 .button {
-	background-color: var(--departure-color);
 	width: 30px;
 	border: 1px solid var(--border-color);
+	background-color: rgba(0, 0, 0, 0);
 }
 
 .sepbutton {
@@ -57,23 +80,28 @@
 	border: 1px solid var(--border-color);
 }
 
-.sep {
+.sep, .red_sep {
 	display: grid;
 	grid-template-columns: 1020px 60px;
 	grid-template-rows: repeat(3, 40px);
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-	padding: 5px;
+	margin: 5px;
+	width: 1080px;
 }
 
 .sep1, .sep2, .sep3, .sep4 {
-	background-color: var(--separator-color);
+	background-color: rgba(0, 0, 0, 0);
 }
 
 .sep1 {
 	border: none;
 	text-align: center;
 	font-size: 3rem;
+}
+
+.red_sep .sep1 {
+	color: red;
 }
 
 .sep1 { grid-area: 1 / 1 / 4 / 2; }

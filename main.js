@@ -1,4 +1,4 @@
-function create_new_strip() {
+function create_new_strip(arg) {
 	const strip	= document.createElement("div");
 	const div1	= document.createElement("input");
 	const div2	= document.createElement("input");
@@ -26,7 +26,7 @@ function create_new_strip() {
 	const div29	= document.createElement("div");
 	const div30	= document.createElement("div");
 
-	strip.className	= "strip";
+	strip.className	= arg;
 	div1.className	= "div1";
 	div2.className	= "div2";
 	div3.className	= "div3";
@@ -64,9 +64,9 @@ function create_new_strip() {
 	div9.placeholder	= "代替";
 	div10.placeholder	= "フライトプラン";
 
-	const checkbox1		= document.createElement("input");
-	const checkbox2		= document.createElement("input");
-	const checkbox3		= document.createElement("input");
+	const checkbox1	= document.createElement("input");
+	const checkbox2	= document.createElement("input");
+	const checkbox3	= document.createElement("input");
 
 	checkbox1.type	= "checkbox";
 	checkbox2.type	= "checkbox";
@@ -116,7 +116,7 @@ function delete_strip(obj) {
 
 function moveup(obj){
 	const parent_strip = obj.parentNode.parentNode;
-	if (parent_strip.previousSibling.className !== "strip"){
+	if (parent_strip.previousSibling.className === "header"){
 		return;
 	}
 	const prev_strip = parent_strip.previousSibling;
@@ -163,13 +163,28 @@ function create_new_sep(){
 	separator.appendChild(sep3);
 	separator.appendChild(sep4);
 
-	sep2.innerHTML = "<input class=\"sepbutton\" type=\"button\" value=\"&#x1f3a8\" onclick=\"change_color(this)\"><input class=\"sepbutton\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
-	sep3.innerHTML = "<input class=\"sepbutton\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input class=\"sepbutton\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
-	sep4.innerHTML = "<input class=\"sepbutton\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input class=\"sepbutton\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
+	sep2.innerHTML = "<input class=\"button\" type=\"button\" value=\"&#x1f3a8\" onclick=\"change_color(this)\"><input class=\"button\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
+	sep3.innerHTML = "<input class=\"button\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input class=\"button\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
+	sep4.innerHTML = "<input class=\"button\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input class=\"button\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
 
 	document.body.appendChild(separator);
 }
 
 function change_color(obj) {
-	alert("color change is Work In Progress.");
+	let parent_strip_classname = obj.parentNode.parentNode.className;
+	if (parent_strip_classname === "dep_strip") {
+		obj.parentNode.parentNode.className = "arr_strip";
+	}
+	if (parent_strip_classname == "arr_strip") {
+		obj.parentNode.parentNode.className = "other_strip";
+	}
+	if (parent_strip_classname == "other_strip") {
+		obj.parentNode.parentNode.className = "dep_strip";
+	}
+	if (parent_strip_classname == "sep") {
+		obj.parentNode.parentNode.className = "red_sep"
+	}
+	if (parent_strip_classname == "red_sep") {
+		obj.parentNode.parentNode.className = "sep"
+	}
 }

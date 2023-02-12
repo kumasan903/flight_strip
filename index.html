@@ -9,8 +9,10 @@
 	<script src="main.js"></script>
 </head>
 <body>
-	<header>
-		<input type="button" value="new_strip" onclick="create_new_strip()">
+	<header class="header">
+		<input type="button" value="new_arrival_strip" onclick="create_new_strip('arr_strip')">
+		<input type="button" value="new_departure_strip" onclick="create_new_strip('dep_strip')">
+		<input type="button" value="new_other_strip" onclick="create_new_strip('other_strip')">
 		<input type="button" value="new_separator" onclick="create_new_sep()">
 	</header>
 </body>
