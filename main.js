@@ -77,8 +77,8 @@ function create_new_strip(arg) {
 	div27.appendChild(checkbox3);
 
 	div28.innerHTML = "<input title=\"色を変更\" class=\"button\" type=\"button\" value=\"&#x1f3a8\" onclick=\"change_color(this)\"><input title=\"さらばじゃ\" class=\"button\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
-	div29.innerHTML = "<input title=\"上に移動\" class=\"button\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input title=\"一番上に移動\" class=\"button\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
-	div30.innerHTML = "<input title=\"下に移動\" class=\"button\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input title=\"一番下に移動\" class=\"button\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
+	div29.innerHTML = "<input title=\"上に移動\" class=\"button\" type=\"button\" value=\"↑\" onclick=\"move_up(this)\"><input title=\"一番上に移動\" class=\"button\" type=\"button\" value=\"↑↑\" onclick=\"move_top(this)\">"
+	div30.innerHTML = "<input title=\"下に移動\" class=\"button\" type=\"button\" value=\"↓\" onclick=\"move_down(this)\"><input title=\"一番下に移動\" class=\"button\" type=\"button\" value=\"↓↓\" onclick=\"move_bottom(this)\">"
 
 	strip.appendChild(div1);
 	strip.appendChild(div2);
@@ -115,7 +115,7 @@ function delete_strip(obj) {
 	parent_strip.remove();
 }
 
-function moveup(obj){
+function move_up(obj){
 	const parent_strip = obj.parentNode.parentNode;
 	const strips = document.getElementById("strips");
 	const prev_strip = parent_strip.previousSibling;
@@ -126,7 +126,7 @@ function moveup(obj){
 	strips.insertBefore(parent_strip, prev_strip);
 }
 
-function movedown(obj){
+function move_down(obj){
 	const parent_strip = obj.parentNode.parentNode;
 	const next_strip = parent_strip.nextSibling;
 	const strips = document.getElementById("strips");
@@ -136,13 +136,13 @@ function movedown(obj){
 	strips.insertBefore(parent_strip, next_strip.nextSibling);
 }
 
-function movetop(obj){
+function move_top(obj){
 	const parent_strip = obj.parentNode.parentNode;
 	const strips = document.getElementById("strips");
 	strips.insertBefore(parent_strip, strips.firstChild);
 }
 
-function movebottom(obj){
+function move_bottom(obj){
 	const parent_strip = obj.parentNode.parentNode;
 	const strips = document.getElementById("strips");
 	strips.insertBefore(parent_strip, null);
@@ -168,8 +168,8 @@ function create_new_sep(){
 	separator.appendChild(sep4);
 
 	sep2.innerHTML = "<input title=\"色を変更\" class=\"button\" type=\"button\" value=\"&#x1f3a8\" onclick=\"change_color(this)\"><input title=\"さらばじゃ\" class=\"button\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
-	sep3.innerHTML = "<input title=\"上に移動\" class=\"button\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input title=\"一番上に移動\" class=\"button\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
-	sep4.innerHTML = "<input title=\"下に移動\" class=\"button\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input title=\"一番下に移動\" class=\"button\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
+	sep3.innerHTML = "<input title=\"上に移動\" class=\"button\" type=\"button\" value=\"↑\" onclick=\"move_up(this)\"><input title=\"一番上に移動\" class=\"button\" type=\"button\" value=\"↑↑\" onclick=\"move_top(this)\">"
+	sep4.innerHTML = "<input title=\"下に移動\" class=\"button\" type=\"button\" value=\"↓\" onclick=\"move_down(this)\"><input title=\"一番下に移動\" class=\"button\" type=\"button\" value=\"↓↓\" onclick=\"move_bottom(this)\">"
 
 	const strips = document.getElementById("strips");
 	strips.insertBefore(separator, strips.firstChild);
