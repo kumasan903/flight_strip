@@ -107,7 +107,7 @@ function create_new_strip(arg) {
 	strip.appendChild(div30);
 
 	const strips = document.getElementById("strips");
-	strips.appendChild(strip);
+	strips.insertBefore(strip, strips.firstChild);
 }
 
 function delete_strip(obj) {
@@ -172,7 +172,7 @@ function create_new_sep(){
 	sep4.innerHTML = "<input class=\"button\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input class=\"button\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
 
 	const strips = document.getElementById("strips");
-	strips.appendChild(separator);
+	strips.insertBefore(separator, strips.firstChild);
 }
 
 function change_color(obj) {
