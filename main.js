@@ -106,7 +106,8 @@ function create_new_strip(arg) {
 	strip.appendChild(div29);
 	strip.appendChild(div30);
 
-	document.body.appendChild(strip);
+	const strips = document.getElementById("strips");
+	strips.appendChild(strip);
 }
 
 function delete_strip(obj) {
@@ -116,32 +117,35 @@ function delete_strip(obj) {
 
 function moveup(obj){
 	const parent_strip = obj.parentNode.parentNode;
-	if (parent_strip.previousSibling.className === "header"){
-		return;
-	}
+	const strips = document.getElementById("strips");
 	const prev_strip = parent_strip.previousSibling;
-	document.body.insertBefore(parent_strip, prev_strip);
+	if (prev_strip === null)
+	{
+		return ;
+	}
+	strips.insertBefore(parent_strip, prev_strip);
 }
 
 function movedown(obj){
 	const parent_strip = obj.parentNode.parentNode;
 	const next_strip = parent_strip.nextSibling;
+	const strips = document.getElementById("strips");
 	if (next_strip === null){
 		return;
 	}
-	document.body.insertBefore(parent_strip, next_strip.nextSibling);
+	strips.insertBefore(parent_strip, next_strip.nextSibling);
 }
 
 function movetop(obj){
 	const parent_strip = obj.parentNode.parentNode;
-	const top_node = parent_strip.parentNode.firstChild;
-	const top_strip = top_node.nextSibling.nextSibling;
-	document.body.insertBefore(parent_strip, top_strip);
+	const strips = document.getElementById("strips");
+	strips.insertBefore(parent_strip, strips.firstChild);
 }
 
 function movebottom(obj){
 	const parent_strip = obj.parentNode.parentNode;
-	document.body.insertBefore(parent_strip, null);
+	const strips = document.getElementById("strips");
+	strips.insertBefore(parent_strip, null);
 }
 
 function create_new_sep(){
@@ -167,7 +171,8 @@ function create_new_sep(){
 	sep3.innerHTML = "<input class=\"button\" type=\"button\" value=\"↑\" onclick=\"moveup(this)\"><input class=\"button\" type=\"button\" value=\"↑↑\" onclick=\"movetop(this)\">"
 	sep4.innerHTML = "<input class=\"button\" type=\"button\" value=\"↓\" onclick=\"movedown(this)\"><input class=\"button\" type=\"button\" value=\"↓↓\" onclick=\"movebottom(this)\">"
 
-	document.body.appendChild(separator);
+	const strips = document.getElementById("strips");
+	strips.appendChild(separator);
 }
 
 function change_color(obj) {
