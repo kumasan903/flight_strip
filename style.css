@@ -7,6 +7,7 @@
 	--border-color: #c0c0c0;
 }
 
+/* strips */
 .arr_strip, .dep_strip, .other_strip {
 	display: grid;
 	grid-template-columns: 150px repeat(2, 80px) 320px repeat(3, 120px) 30px 60px;
@@ -27,14 +28,6 @@
 
 .other_strip {
 	background-color: var(--other-color);
-}
-
-.sep {
-	background-color: var(--separator-color);
-}
-
-.red_sep {
-	background-color: var(--red-separator-color);
 }
 
 .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9, .div10, .div16, .div17, .div18, .div19, .div20, .div21, .div22, .div23, .div24, .div25, .div26, .div27, .div28, .div29, .div30 {
@@ -68,12 +61,7 @@
 .div29	{ grid-area: 2 / 9 / 3 / 10; display: flex;}
 .div30	{ grid-area: 3 / 9 / 4 / 10; display: flex;}
 
-.button {
-	width: 30px;
-	border: 1px solid var(--border-color);
-	background-color: rgba(0, 0, 0, 0);
-}
-
+/* separator */
 .sep, .red_sep {
 	display: grid;
 	grid-template-columns: 1020px 60px;
@@ -82,6 +70,14 @@
 	grid-row-gap: 0px;
 	margin: 5px;
 	width: 1080px;
+}
+
+.sep {
+	background-color: var(--separator-color);
+}
+
+.red_sep {
+	background-color: var(--red-separator-color);
 }
 
 .sep1, .sep2, .sep3, .sep4 {
@@ -102,3 +98,10 @@
 .sep2 { grid-area: 1 / 2 / 2 / 3; display: flex;}
 .sep3 { grid-area: 2 / 2 / 3 / 3; display: flex;}
 .sep4 { grid-area: 3 / 2 / 4 / 3; display: flex;}
+
+/* button */
+.button {
+	width: 30px;
+	border: 1px solid var(--border-color);
+	background-color: rgba(0, 0, 0, 0);
+}
