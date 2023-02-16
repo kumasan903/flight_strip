@@ -55,7 +55,7 @@ function create_new_strip(arg) {
 
 	div1.placeholder	= "コールサイン";
 	div2.placeholder	= "機種/後方乱気流区分";
-	div3.placeholder	= "ID";
+	div3.placeholder	= "name";
 	div4.placeholder	= "スコーク";
 	div5.placeholder	= "暫定高度";
 	div6.placeholder	= "巡航高度";
