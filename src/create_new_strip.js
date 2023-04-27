@@ -77,8 +77,8 @@ function create_new_strip(arg) {
 	div27.appendChild(checkbox3);
 
 	div28.innerHTML = "<input title=\"色を変更\" class=\"button\" type=\"button\" value=\"&#x1f3a8\" onclick=\"change_color(this)\"><input title=\"さらばじゃ\" class=\"button\" type=\"button\" value=\"☓\" onclick=\"delete_strip(this)\">"
-	div29.innerHTML = "<input title=\"上に移動\" class=\"button\" type=\"button\" value=\"↑\" onclick=\"move_up(this)\"><input title=\"一番上に移動\" class=\"button\" type=\"button\" value=\"↑↑\" onclick=\"move_top(this)\">"
-	div30.innerHTML = "<input title=\"下に移動\" class=\"button\" type=\"button\" value=\"↓\" onclick=\"move_down(this)\"><input title=\"一番下に移動\" class=\"button\" type=\"button\" value=\"↓↓\" onclick=\"move_bottom(this)\">"
+	div29.innerHTML = "<input title=\"上に移動\" class=\"button\" type=\"button\" value=\"↑\" onclick=\"move_up(this)\"><input title=\"上の仕切りに移動\" class=\"button\" type=\"button\" value=\"↑↑\" onclick=\"move_up_sep(this)\">"
+	div30.innerHTML = "<input title=\"下に移動\" class=\"button\" type=\"button\" value=\"↓\" onclick=\"move_down(this)\"><input title=\"下の仕切りに移動\" class=\"button\" type=\"button\" value=\"↓↓\" onclick=\"move_down_sep(this)\">"
 
 	strip.appendChild(div1);
 	strip.appendChild(div2);

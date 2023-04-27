@@ -35,3 +35,49 @@ function move_bottom(obj){
 	const strips = document.getElementById("strips");
 	strips.insertBefore(parent_strip, null);
 }
+
+function move_up_sep(obj){
+	const parent_strip = obj.parentNode.parentNode;
+	const strips = document.getElementById("strips");
+	while (true)
+	{
+		if (parent_strip.previousSibling == null)
+		{
+			break;
+		}
+		if (parent_strip.previousSibling.className == 'sep')
+		{
+			strips.insertBefore(parent_strip, parent_strip.previousSibling);
+			break;
+		}
+		
+		strips.insertBefore(parent_strip, parent_strip.previousSibling);
+	}
+	while (true)
+	{
+		if (parent_strip.previousSibling == null || parent_strip.previousSibling.className == 'sep')
+		{
+			break;
+		}
+		strips.insertBefore(parent_strip, parent_strip.previousSibling);
+	}
+}
+
+function move_down_sep(obj){
+	const parent_strip = obj.parentNode.parentNode;
+	const strips = document.getElementById("strips");
+	let next_strip;
+	while (true)
+	{
+		next_strip = parent_strip.nextSibling;
+		if (next_strip == null){
+			break;
+		}
+		if (next_strip.className == 'sep')
+		{
+			strips.insertBefore(parent_strip, next_strip.nextSibling);
+			break;
+		}
+		strips.insertBefore(parent_strip, next_strip.nextSibling);
+	}
+}
