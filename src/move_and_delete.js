@@ -1,6 +1,9 @@
 function delete_strip(obj) {
-	const parent_strip = obj.parentNode.parentNode;
-	parent_strip.remove();
+	if(confirm("消去しますか？"))
+	{
+		const parent_strip = obj.parentNode.parentNode;
+		parent_strip.remove();
+	}
 }
 
 function move_up(obj){
